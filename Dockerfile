@@ -1,7 +1,7 @@
 ARG HIVE_IMAGE_TAG
 
 # Stage 1: Builder stage with Gradle to download dependencies
-FROM gradle:8.7-jdk17 AS builder
+FROM gradle:9.0.0-jdk24-ubi-minimal AS builder
 WORKDIR /build
 COPY build.gradle.kts .
 RUN gradle copyLibs --no-daemon
