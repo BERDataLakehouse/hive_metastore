@@ -17,6 +17,8 @@ RUN apt-get update && \
 
 COPY config/hive-site.xml /opt/hive/conf/hive-site.xml.template
 COPY scripts/entrypoint.sh /entrypoint.sh
+
+RUN cp /opt/hive/conf/hive-log4j2.properties.template /opt/hive/conf/hive-log4j2.properties
 RUN chmod +x /entrypoint.sh
 RUN chown -R hive:hive /opt/hive/conf/
 
