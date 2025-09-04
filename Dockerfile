@@ -3,8 +3,9 @@ ARG HIVE_IMAGE_TAG
 # Stage 1: Builder stage with Gradle to download dependencies
 FROM gradle:8.7-jdk17 AS builder
 WORKDIR /build
-COPY build.gradle gradle.properties ./
-RUN gradle build --no-daemon
+COPY build.gradle.kts .
+RUN gradle copyLibs --no-daemon
+RUN gradle dependencies --configuration runtimeClasspath > /build/libs/dependencies.txt
 
 # Stage 2: Final Hive image with Hive + JDBC driver + entrypoint
 FROM apache/hive:${HIVE_IMAGE_TAG}
