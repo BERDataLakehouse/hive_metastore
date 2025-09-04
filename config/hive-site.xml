@@ -124,6 +124,22 @@
 </property>
 
 
+<property>
+  <name>fs.s3a.aws.credentials.provider</name>
+  <value>org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider</value>
+</property>
+<property>
+  <name>fs.s3a.connection.timeout</name>
+  <value>10000</value>
+</property>
+<property>
+  <name>fs.s3a.socket.timeout</name>
+  <value>10000</value>
+</property>
+<property>
+  <name>fs.s3a.retry.limit</name>
+  <value>2</value>
+</property>
 
 
 </configuration>
