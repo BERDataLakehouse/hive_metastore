@@ -1,5 +1,6 @@
 # BERDL Hive Metastore
 * Keep `build.gradle.kts` in sync with container requirements, such as Hadoop version 3.3.6
+* See https://hadoop.apache.org/docs/r3.4.1/hadoop-aws/tools/hadoop-aws/connecting.html
 
 # Possible configurations to investigate adding:
 * export HADOOP_CLIENT_OPTS="${HADOOP_CLIENT_OPTS} -Xmx${HADOOP_CLIENT_HEAP:-1G}"
