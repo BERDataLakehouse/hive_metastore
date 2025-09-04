@@ -101,4 +101,29 @@
     <description>Automatically create the necessary tables in the database schema if they don't exist</description>
   </property>
 
+
+  <!-- ========================================= -->
+<!-- REQUIRED FOR THIRD-PARTY S3 STORES       -->
+<!-- ========================================= -->
+<property>
+  <name>fs.s3a.endpoint.region</name>
+  <value>us-east-1</value>
+  <description>Required for v4 signing - any non-empty value works for MinIO</description>
+</property>
+
+<property>
+  <name>fs.s3a.change.detection.mode</name>
+  <value>none</value>
+  <description>Disable change detection to avoid HEAD requests that may hang</description>
+</property>
+
+<property>
+  <name>fs.s3a.bucket.probe</name>
+  <value>0</value>
+  <description>Disable bucket probes at startup (default but explicit)</description>
+</property>
+
+
+
+
 </configuration>
