@@ -9,8 +9,8 @@ def hadoopAwsVersion = "3.3.6"    // Must match Hive container's 4.0.0's bundled
 def postgresVersion = "42.7.7"
 
 dependencies {
-    implementation "org.postgresql:postgresql:$postgresVersion"
-    implementation "org.apache.hadoop:hadoop-aws:$hadoopAwsVersion"
+    runtimeOnly "org.postgresql:postgresql:$postgresVersion"
+    runtimeOnly "org.apache.hadoop:hadoop-aws:$hadoopAwsVersion"
 }
 
 tasks.create<Copy>("copyLibs") {
