@@ -61,7 +61,7 @@
 
   <property>
     <name>fs.s3a.connection.ssl.enabled</name>
-    <value>${S3_SECURE:-true}</value>
+    <value>${S3_SECURE}</value>
   </property>
 
   <property>

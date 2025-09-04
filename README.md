@@ -28,12 +28,12 @@ These variables configure the connection to the PostgreSQL database used by the 
 
 These variables configure S3-compatible storage (such as MinIO) for data storage:
 
-| Variable        | Description                                                         | Example             |
-|-----------------|---------------------------------------------------------------------|---------------------|
-| `S3_ENDPOINT`   | S3A endpoint URL for MinIO or S3-compatible storage                 | `http://minio:9000` |
-| `S3_ACCESS_KEY` | S3A access key for authentication                                   | `minioadmin`        |
-| `S3_SECRET_KEY` | S3A secret key for authentication                                   | `minioadmin`        |
-| `S3_SECURE`    | Enable/disable SSL/TLS for S3A connections (defaults to true)        | `true`              |
+| Variable        | Description                                          | Example             |
+|-----------------|------------------------------------------------------|---------------------|
+| `S3_ENDPOINT`   | S3A endpoint URL for MinIO or S3-compatible storage  | `http://minio:9000` |
+| `S3_ACCESS_KEY` | S3A access key for authentication                    | `minioadmin`        |
+| `S3_SECRET_KEY` | S3A secret key for authentication                    | `minioadmin`        |
+| `S3_SECURE`    | Enable/disable SSL/TLS for S3A connections           | `true`              |
  
 ## Environment 
 
