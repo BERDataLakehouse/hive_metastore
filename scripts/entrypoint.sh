@@ -15,5 +15,4 @@ fi
 
 hadoop_version=$(hadoop version | head -n 1 | awk '{print $2}')
 echo "Starting Hive Metastore with templatized /opt/hive/conf/hive-site.xml with hadoop:$hadoop_version"
-exec $HIVE_HOME/bin/hive --service metastore
-
+exec $HIVE_HOME/bin/hive --verbose --service metastore
