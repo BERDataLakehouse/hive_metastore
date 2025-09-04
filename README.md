@@ -1,7 +1,7 @@
 # BERDL Hive Metastore
 * Keep `build.gradle.kts` in sync with the BERDL Jupyter Base Image gradle file
 
-# Possible configurations to investigaete adding:
+# Possible configurations to investigate adding:
 * export HADOOP_CLIENT_OPTS="${HADOOP_CLIENT_OPTS} -Xmx${HADOOP_CLIENT_HEAP:-1G}"
 * --skiphadoopversion --skiphbasecp
 
