@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+// IMPORTANT: Version compatibility chain - all versions must be aligned
+// Hive 4.0.0 → Hadoop 3.3.6
+// Using mismatched versions causes ClassNotFoundException and compatibility issues
+def hadoopAwsVersion = "3.3.6"    // Must match Hive 4.0.0's bundled Hadoop
+def postgresVersion = "42.7.7"
+
+dependencies {
+    // PostgreSQL JDBC Driver for Hive Metastore
+    implementation "org.postgresql:postgresql:$postgresVersion"
+    
+    // AWS support for Hadoop S3A filesystem
+    implementation "org.apache.hadoop:hadoop-aws:$hadoopAwsVersion"
+}
+
+// Task to copy all resolved JARs into libs directory
+task copyLibs(type: Copy) {
+    from configurations.runtimeClasspath
+    into 'libs'
+}
+
+build.dependsOn copyLibs
