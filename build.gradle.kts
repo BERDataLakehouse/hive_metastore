@@ -2,22 +2,16 @@ plugins {
     `java`
 }
 
-val hadoopAwsVersion = "3.4.1"
-val deltaSparkVersion = "4.0.0"
-val scalaVersion = "2.13"
-val postgresVersion = "42.7.7"
 
-
-repositories {
-    mavenCentral()
-}
+// IMPORTANT: Version compatibility chain - all versions must be aligned to avoid compatibility issues
+// Hive 4.0.0 → Hadoop 3.3.6
+def hadoopAwsVersion = "3.3.6"    // Must match Hive container's 4.0.0's bundled Hadoop
+def postgresVersion = "42.7.7"
 
 dependencies {
-    runtimeOnly("org.apache.hadoop:hadoop-aws:$hadoopAwsVersion")
-    runtimeOnly("io.delta:delta-spark_${scalaVersion}:$deltaSparkVersion")
-    runtimeOnly("org.postgresql:postgresql:$postgresVersion")
+    implementation "org.postgresql:postgresql:$postgresVersion"
+    implementation "org.apache.hadoop:hadoop-aws:$hadoopAwsVersion"
 }
-
 
 tasks.create<Copy>("copyLibs") {
     from(configurations.runtimeClasspath)

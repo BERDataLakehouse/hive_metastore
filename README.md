@@ -1,5 +1,5 @@
 # BERDL Hive Metastore
-* Keep `build.gradle.kts` in sync with the BERDL Jupyter Base Image gradle file
+* Keep `build.gradle.kts` in sync with container requirements, such as Hadoop version 3.3.6
 
 # Possible configurations to investigate adding:
 * export HADOOP_CLIENT_OPTS="${HADOOP_CLIENT_OPTS} -Xmx${HADOOP_CLIENT_HEAP:-1G}"
