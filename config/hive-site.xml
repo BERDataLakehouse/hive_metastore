@@ -29,10 +29,10 @@
   <!-- WAREHOUSE CONFIGURATION                   -->
   <!-- ========================================= -->
 
-  <property>
-    <name>hive.metastore.warehouse.dir</name>
-    <value>${DELTALAKE_WAREHOUSE_DIR}</value>
-  </property>
+  <!--  <property>-->
+  <!--    <name>hive.metastore.warehouse.dir</name>-->
+  <!--    <value>${DELTALAKE_WAREHOUSE_DIR}</value>-->
+  <!--  </property>-->
 
   <!-- ========================================= -->
   <!-- S3A CONFIGURATION FOR MINIO              -->
