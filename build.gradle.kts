@@ -1,7 +1,9 @@
 plugins {
     `java`
 }
-
+repositories {
+    mavenCentral()
+}
 
 // IMPORTANT: Version compatibility chain - all versions must be aligned to avoid compatibility issues
 // Hive 4.0.0 → Hadoop 3.3.6
