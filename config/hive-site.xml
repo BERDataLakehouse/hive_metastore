@@ -8,25 +8,21 @@
   <property>
     <name>javax.jdo.option.ConnectionURL</name>
     <value>jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}</value>
-    <description>JDBC URL for PostgreSQL metastore database connection</description>
   </property>
 
   <property>
     <name>javax.jdo.option.ConnectionDriverName</name>
     <value>org.postgresql.Driver</value>
-    <description>PostgreSQL JDBC driver class name</description>
   </property>
 
   <property>
     <name>javax.jdo.option.ConnectionUserName</name>
     <value>${POSTGRES_USER}</value>
-    <description>Database username for metastore connection</description>
   </property>
 
   <property>
     <name>javax.jdo.option.ConnectionPassword</name>
     <value>${POSTGRES_PASSWORD}</value>
-    <description>Database password for metastore connection</description>
   </property>
 
   <!-- ========================================= -->
@@ -36,7 +32,6 @@
   <property>
     <name>hive.metastore.warehouse.dir</name>
     <value>${DELTALAKE_WAREHOUSE_DIR}</value>
-    <description>Directory location for the Hive warehouse where table data is stored</description>
   </property>
 
   <!-- ========================================= -->
@@ -46,19 +41,16 @@
   <property>
     <name>fs.s3a.endpoint</name>
     <value>${S3_ENDPOINT}</value>
-    <description>S3A endpoint URL for MinIO or S3-compatible storage</description>
   </property>
 
   <property>
     <name>fs.s3a.access.key</name>
     <value>${S3_ACCESS_KEY}</value>
-    <description>S3A access key for authentication</description>
   </property>
 
   <property>
     <name>fs.s3a.secret.key</name>
     <value>${S3_SECRET_KEY}</value>
-    <description>S3A secret key for authentication</description>
   </property>
 
   <property>
@@ -69,8 +61,7 @@
 
   <property>
     <name>fs.s3a.connection.ssl.enabled</name>
-    <value>false</value>
-    <description>Disable SSL for local MinIO development setup</description>
+    <value>${S3_SECURE:-true}</value>
   </property>
 
   <property>
@@ -92,7 +83,6 @@
   <property>
     <name>hive.support.concurrency</name>
     <value>true</value>
-    <description>Enable support for concurrency in Hive operations</description>
   </property>
 
   <property>
