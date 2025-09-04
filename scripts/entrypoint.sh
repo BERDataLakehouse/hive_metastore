@@ -1,11 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Starting Hive Metastore with environment variable substitution..."
-
-# Process hive-site.xml with environment variable substitution
 envsubst < /opt/hive/conf/hive-site.xml.template > /opt/hive/conf/hive-site.xml
-
 echo "Generated hive-site.xml with current environment variables"
 
 # Initialize schema if needed
@@ -17,6 +13,5 @@ else
     $HIVE_HOME/bin/schematool -dbType postgres -initSchema
 fi
 
-# Start Hive Metastore service
-echo "Starting Hive Metastore..."
+echo "Starting Hive Metastore with templatized /opt/hive/conf/hive-site.xml."
 exec $HIVE_HOME/bin/hive --service metastore
