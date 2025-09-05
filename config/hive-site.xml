@@ -62,6 +62,7 @@
   <property>
     <name>fs.s3a.connection.ssl.enabled</name>
     <value>false</value>
+    <description> let nginx handle SSL  </description>
   </property>
 
   <property>
@@ -150,10 +151,10 @@
 
 
 
+
   <property>
-  <name>fs.s3a.s3.signing-algorithm</name>
+  <name>fs.s3a.signing-algorithm</name>
   <value>AWS4SignerType</value>
-  <description>Force S3A to use AWS Signature V4 for S3 requests</description>
 </property>
 
 
