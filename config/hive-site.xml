@@ -59,10 +59,10 @@
     <description>Use path-style access for S3A (required for MinIO)</description>
   </property>
 
-  <property>
-    <name>fs.s3a.connection.ssl.enabled</name>
-    <value>${S3_SECURE}</value>
-  </property>
+<!--  <property>-->
+<!--    <name>fs.s3a.connection.ssl.enabled</name>-->
+<!--    <value>${S3_SECURE}</value>-->
+<!--  </property>-->
 
   <property>
     <name>fs.s3a.impl</name>
