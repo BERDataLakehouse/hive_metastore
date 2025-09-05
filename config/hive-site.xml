@@ -65,11 +65,7 @@
     <description> Minio is running with http, nginx is terminating SSL  </description>
   </property>
 
-  <property>
-    <name>fs.s3a.impl</name>
-    <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
-    <description>S3A filesystem implementation class</description>
-  </property>
+
 
   <!-- ========================================= -->
   <!-- METASTORE SERVICE CONFIGURATION          -->
@@ -101,20 +97,5 @@
     <value>true</value>
     <description>Automatically create the necessary tables in the database schema if they don't exist</description>
   </property>
-
-
-
-
-
-
-
-<!-- ONLY use your configured credentials -->
-<property>
-  <name>fs.s3a.aws.credentials.provider</name>
-  <value>org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider</value>
-</property>
-
-
-
 
 </configuration>
