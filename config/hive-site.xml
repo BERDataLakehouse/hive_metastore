@@ -1,77 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  <!-- PostgreSQL Database Configuration -->
+
+  <!-- ========================================= -->
+  <!-- METASTORE DATABASE CONNECTION             -->
+  <!-- ========================================= -->
+
   <property>
     <name>javax.jdo.option.ConnectionURL</name>
     <value>jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}</value>
   </property>
-  
+
   <property>
     <name>javax.jdo.option.ConnectionDriverName</name>
     <value>org.postgresql.Driver</value>
   </property>
-  
+
   <property>
     <name>javax.jdo.option.ConnectionUserName</name>
     <value>${POSTGRES_USER}</value>
   </property>
-  
+
   <property>
     <name>javax.jdo.option.ConnectionPassword</name>
     <value>${POSTGRES_PASSWORD}</value>
   </property>
 
-  <!-- Schema Management -->
-  <property>
-    <name>datanucleus.schema.autoCreateTables</name>
-    <value>true</value>
-    <description>Automatically create the necessary tables in the database schema if they don't exist</description>
-  </property>
+  <!-- ========================================= -->
+  <!-- WAREHOUSE CONFIGURATION                   -->
+  <!-- ========================================= -->
 
-  <property>
-    <name>hive.metastore.schema.verification</name>
-    <value>false</value>
-    <description>Disable schema verification in the Hive metastore</description>
-  </property>
+  <!--  <property>-->
+  <!--    <name>hive.metastore.warehouse.dir</name>-->
+  <!--    <value>${DELTALAKE_WAREHOUSE_DIR}</value>-->
+  <!--  </property>-->
 
-  <!-- Warehouse Directory Configuration -->
-  <!-- <property>
-    <name>hive.metastore.warehouse.dir</name>
-    <value>${DELTALAKE_WAREHOUSE_DIR}</value>
-    <description>Directory location for the Hive warehouse where table data is stored</description>
-  </property> -->
+  <!-- ========================================= -->
+  <!-- S3A CONFIGURATION FOR MINIO              -->
+  <!-- ========================================= -->
 
-  <!-- S3A / MinIO Configuration -->
   <property>
     <name>fs.s3a.endpoint</name>
     <value>${S3_ENDPOINT}</value>
   </property>
-  
+
   <property>
     <name>fs.s3a.access.key</name>
     <value>${S3_ACCESS_KEY}</value>
   </property>
-  
+
   <property>
     <name>fs.s3a.secret.key</name>
     <value>${S3_SECRET_KEY}</value>
   </property>
-  
+
   <property>
     <name>fs.s3a.path.style.access</name>
     <value>true</value>
+    <description>Use path-style access for S3A (required for MinIO)</description>
   </property>
-  
+
   <property>
     <name>fs.s3a.connection.ssl.enabled</name>
     <value>false</value>
-  </property>
-  
-  <property>
-    <name>fs.s3a.impl</name>
-    <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
+    <description> Minio is running with http, nginx is terminating SSL  </description>
   </property>
 
-  <!-- Metastore Client Configuration -->
+
+
+  <!-- ========================================= -->
+  <!-- METASTORE SERVICE CONFIGURATION          -->
+  <!-- ========================================= -->
+
   <property>
     <name>hive.metastore.client.capability.check</name>
     <value>false</value>
@@ -79,22 +78,24 @@
   </property>
 
   <property>
-    <name>hive.metastore.catalog.default</name>
-    <value>hive</value>
-    <description>Default catalog name for metastore</description>
-  </property>
-
-  <!-- Concurrency Support -->
-  <property>
     <name>hive.support.concurrency</name>
     <value>true</value>
-    <description>Enable support for concurrency in Hive</description>
   </property>
 
-  <!-- Network Configuration -->
   <property>
     <name>hive.metastore.resolve.hostnames</name>
     <value>false</value>
     <description>Avoid canonicalizing URIs to Docker's network domain</description>
   </property>
+
+  <!-- ========================================= -->
+  <!-- SCHEMA MANAGEMENT                         -->
+  <!-- ========================================= -->
+
+  <property>
+    <name>datanucleus.schema.autoCreateTables</name>
+    <value>true</value>
+    <description>Automatically create the necessary tables in the database schema if they don't exist</description>
+  </property>
+
 </configuration>
