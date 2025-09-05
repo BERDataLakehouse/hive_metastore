@@ -124,9 +124,16 @@
 </property>
 
 
+<!-- ONLY use your configured credentials -->
 <property>
   <name>fs.s3a.aws.credentials.provider</name>
   <value>org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider</value>
+</property>
+
+<!-- Disable AWS instance metadata -->
+<property>
+  <name>fs.s3a.iam.instance.credentials.enabled</name>
+  <value>false</value>
 </property>
 <property>
   <name>fs.s3a.connection.timeout</name>
@@ -139,6 +146,14 @@
 <property>
   <name>fs.s3a.retry.limit</name>
   <value>2</value>
+</property>
+
+
+
+  <property>
+  <name>fs.s3a.s3.signing-algorithm</name>
+  <value>AWS4SignerType</value>
+  <description>Force S3A to use AWS Signature V4 for S3 requests</description>
 </property>
 
 
