@@ -62,7 +62,7 @@
   <property>
     <name>fs.s3a.connection.ssl.enabled</name>
     <value>false</value>
-    <description> let nginx handle SSL  </description>
+    <description> Minio is running with http, nginx is terminating SSL  </description>
   </property>
 
   <property>
@@ -112,17 +112,8 @@
   <description>Required for v4 signing - any non-empty value works for MinIO</description>
 </property>
 
-<property>
-  <name>fs.s3a.change.detection.mode</name>
-  <value>none</value>
-  <description>Disable change detection to avoid HEAD requests that may hang</description>
-</property>
 
-<property>
-  <name>fs.s3a.bucket.probe</name>
-  <value>0</value>
-  <description>Disable bucket probes at startup (default but explicit)</description>
-</property>
+
 
 
 <!-- ONLY use your configured credentials -->
@@ -132,18 +123,6 @@
 </property>
 
 
-<property>
-  <name>fs.s3a.connection.timeout</name>
-  <value>10000</value>
-</property>
-<property>
-  <name>fs.s3a.socket.timeout</name>
-  <value>10000</value>
-</property>
-<property>
-  <name>fs.s3a.retry.limit</name>
-  <value>2</value>
-</property>
 
 
 </configuration>
