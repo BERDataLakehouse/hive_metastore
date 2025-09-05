@@ -3,6 +3,14 @@
 * See https://hadoop.apache.org/docs/r3.4.1/hadoop-aws/tools/hadoop-aws/connecting.html
 
 * Todo: bundle a sane logging config, possibly from the metastore image
+* Investigate modifying these
+  * fs.s3a.connection.timeout
+  * fs.s3a.socket.timeout
+  * fs.s3a.retry.limit
+  * fs.s3a.bucket.probe
+  * fs.s3a.change.detection.mode
+  * fs.s3a.endpoint.region
+
 
 
 # Possible configurations to investigate adding:
@@ -32,12 +40,12 @@ These variables configure the connection to the PostgreSQL database used by the 
 
 These variables configure S3-compatible storage (such as MinIO) for data storage:
 
-| Variable        | Description                                          | Example             |
-|-----------------|------------------------------------------------------|---------------------|
-| `S3_ENDPOINT`   | S3A endpoint URL for MinIO or S3-compatible storage  | `http://minio:9000` |
-| `S3_ACCESS_KEY` | S3A access key for authentication                    | `minioadmin`        |
-| `S3_SECRET_KEY` | S3A secret key for authentication                    | `minioadmin`        |
-| `S3_SECURE`    | Enable/disable SSL/TLS for S3A connections           | `true`              |
+| Variable        | Description                                                                           | Example             |
+|-----------------|---------------------------------------------------------------------------------------|---------------------|
+| `S3_ENDPOINT`   | S3A endpoint URL for MinIO or S3-compatible storage. Must contain http:// or https:// | `http://minio:9000` |
+| `S3_ACCESS_KEY` | S3A access key for authentication                                                     | `minioadmin`        |
+| `S3_SECRET_KEY` | S3A secret key for authentication                                                     | `minioadmin`        |
+    
  
 ## Environment 
 
